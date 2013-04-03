@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="12" height="8" tilewidth="32" tileheight="32" backgroundcolor="#000000">
+ <tileset firstgid="1" name="GSCTileset32x32" tilewidth="32" tileheight="32">
+  <image source="GSCTileset32x32.png" width="704" height="320"/>
+ </tileset>
+ <tileset firstgid="221" name="metatiles32x32" tilewidth="32" tileheight="32">
+  <image source="metatiles32x32.png" width="160" height="32"/>
+ </tileset>
+ <layer name="background" width="12" height="8">
+  <data encoding="base64">
+   NQAAADUAAAA1AAAANQAAADUAAAA1AAAANQAAADUAAAA1AAAANQAAADUAAAA1AAAANQAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAA1AAAANQAAACIAAAA1AAAAIgAAACIAAAAiAAAAIgAAADUAAAA1AAAAIgAAACIAAAA1AAAANQAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAADUAAAA1AAAAIgAAACIAAAA1AAAANQAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAA1AAAANQAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAA1AAAANQAAACIAAAA1AAAAIgAAADUAAAAiAAAAIgAAACIAAAAiAAAAIgAAACIAAAA1AAAANQAAADUAAAA1AAAAAAAAADUAAAA1AAAANQAAADUAAAA1AAAANQAAADUAAAA1AAAA
+  </data>
+ </layer>
+ <objectgroup name="mainPlayer" width="12" height="8">
+  <object name="player" x="96" y="192" width="32" height="32">
+   <properties>
+    <property name="image" value="player"/>
+    <property name="spritewidth" value="32"/>
+   </properties>
+  </object>
+  <object name="me.LevelEntity" x="96" y="224" width="32" height="32">
+   <properties>
+    <property name="duration" value="250"/>
+    <property name="fade" value="#000000"/>
+    <property name="to" value="world1"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="collision" width="12" height="8">
+  <data encoding="base64">
+   3QAAAN0AAADdAAAA3QAAAN0AAADdAAAA3QAAAN0AAADdAAAA3QAAAN0AAADdAAAA3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADdAAAA3QAAAAAAAADdAAAAAAAAAAAAAAAAAAAAAAAAAN0AAADdAAAAAAAAAAAAAADdAAAA3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN0AAADdAAAAAAAAAAAAAADdAAAA3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADdAAAA3QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADdAAAA3QAAAAAAAADdAAAAAAAAAN0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADdAAAA3QAAAN0AAADdAAAAAAAAAN0AAADdAAAA3QAAAN0AAADdAAAA3QAAAN0AAADdAAAA
+  </data>
+ </layer>
+</map>
