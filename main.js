@@ -66,10 +66,10 @@ var jsApp	=
 		me.entityPool.add("player", PlayerEntity);
 		me.debug.renderHitBox = true;
 		
-		me.input.bindKey(me.input.KEY.LEFT,  "left");
-		me.input.bindKey(me.input.KEY.RIGHT, "right");
-		me.input.bindKey(me.input.KEY.UP,  "up");
-		me.input.bindKey(me.input.KEY.DOWN, "down");
+		me.input.bindKey(me.input.KEY.LEFT,  "left", true);
+		me.input.bindKey(me.input.KEY.RIGHT, "right", true);
+		me.input.bindKey(me.input.KEY.UP,  "up", true);
+		me.input.bindKey(me.input.KEY.DOWN, "down", true);
       
       // start the game 
 		me.state.change(me.state.PLAY);
@@ -85,6 +85,8 @@ var PlayScreen = me.ScreenObject.extend(
 	{	
       // stuff to reset on state change
 	  me.levelDirector.loadLevel("world1");
+	  //alert("TEST");
+	  //pops up a message box, can be dropped in anywhere
 	},
 	
 	

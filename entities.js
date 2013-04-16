@@ -14,7 +14,8 @@ var PlayerEntity = me.ObjectEntity.extend({
         this.parent(x, y, settings);
  
         // set the default horizontal & vertical speed (accel vector)
-        this.setVelocity(3, 3);
+		// set to move one unit per button press
+        this.setVelocity(32, 32);
 		this.gravity = 0;
  
         // set the display to follow our position on both axis
