@@ -24,6 +24,14 @@ var g_resources= [{
 	type: "image",
 	src: "enemy5.png"
 	}, {
+	name: "title_screen",
+	type: "image",
+	src: "title_screen.png"
+	}, {
+	name: "32x32_font",
+	type: "image",
+	src: "32x32_font.png"
+	}, {
 	name: "GSCTileset32x32",
 	type: "image",
 	src: "GSCTileset32x32.png"
@@ -116,8 +124,12 @@ var jsApp	=
 		---										*/
 	loaded: function ()
 	{
+	
+		me.state.set(me.state.MENU, new TitleScreen());
 		// set the "Play/Ingame" Screen Object
 		me.state.set(me.state.PLAY, new PlayScreen());
+		
+		me.state.transition("fade", "#FFFFFF", 250);
 		
 		me.entityPool.add("player", PlayerEntity);
 		me.entityPool.add("Enemy", EnemyEntity);
@@ -141,7 +153,7 @@ var jsApp	=
 		me.input.bindKey(me.input.KEY.DOWN, "down");
       
       // start the game 
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
 	}
 
 }; // jsApp
@@ -169,6 +181,92 @@ var PlayScreen = me.ScreenObject.extend(
 	
    }
 
+});
+
+/*----------------------
+ 
+    A title screen
+ 
+  ----------------------*/
+ 
+var TitleScreen = me.ScreenObject.extend({
+    // constructor
+    init: function() {
+        this.parent(true);
+ 
+        // title screen image
+        this.title = null;
+ 
+        this.font = null;
+        this.scrollerfont = null;
+        this.scrollertween = null;
+ 
+        this.scroller = "PRESS ENTER TO PLAY       ";
+        this.scrollerpos = 600;
+    },
+ 
+    // reset function
+    onResetEvent: function() {
+        if (this.title == null) {
+            // init stuff if not yet done
+            this.title = me.loader.getImage("title_screen");
+            // font to display the menu items
+            this.font = new me.BitmapFont("32x32_font", 32);
+            this.font.set("left");
+ 
+            // set the scroller
+            this.scrollerfont = new me.BitmapFont("32x32_font", 32);
+            this.scrollerfont.set("left");
+ 
+        }
+ 
+        // reset to default value
+        this.scrollerpos = 640;
+ 
+        // a tween to animate the arrow
+        this.scrollertween = new me.Tween(this).to({
+            scrollerpos: -2200
+        }, 10000).onComplete(this.scrollover.bind(this)).start();
+ 
+        // enable the keyboard
+        me.input.bindKey(me.input.KEY.ENTER, "enter", true);
+  
+    },
+ 
+    // some callback for the tween objects
+    scrollover: function() {
+        // reset to default value
+        this.scrollerpos = 640;
+        this.scrollertween.to({
+            scrollerpos: -2200
+        }, 10000).onComplete(this.scrollover.bind(this)).start();
+    },
+ 
+    // update function
+    update: function() {
+        // enter pressed ?
+        if (me.input.isKeyPressed('enter')) {
+            me.state.change(me.state.PLAY);
+        }
+        return true;
+    },
+ 
+    // draw function
+    draw: function(context) {
+        context.drawImage(this.title, 0, 0);
+ 
+       // this.font.draw(context, "PRESS ENTER TO PLAY", 20, 240);
+        this.scrollerfont.draw(context, this.scroller, this.scrollerpos, 440);
+    },
+ 
+    // destroy function
+    onDestroyEvent: function() {
+        me.input.unbindKey(me.input.KEY.ENTER);
+ 
+        //just in case
+        this.scrollertween.stop();
+    }
+ 
 });
 
 
