@@ -30,7 +30,7 @@
   <object name="player" x="96" y="576" width="32" height="32">
    <properties>
     <property name="image" value="player"/>
-    <property name="spritewidth" value="16"/>
+    <property name="spritewidth" value="28"/>
    </properties>
   </object>
   <object name="me.LevelEntity" x="64" y="624" width="128" height="16">

@@ -5,6 +5,11 @@
  </tileset>
  <tileset firstgid="221" name="metatiles32x32" tilewidth="32" tileheight="32">
   <image source="metatiles32x32.png" width="160" height="32"/>
+  <tile id="0">
+   <properties>
+    <property name="type" value="solid"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="background" width="12" height="8">
   <data encoding="base64">
@@ -15,14 +20,14 @@
   <object name="player" x="96" y="192" width="32" height="32">
    <properties>
     <property name="image" value="player"/>
-    <property name="spritewidth" value="32"/>
+    <property name="spritewidth" value="28"/>
    </properties>
   </object>
   <object name="me.LevelEntity" x="96" y="224" width="32" height="32">
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="world1"/>
+    <property name="to" value="route1_from_cave"/>
    </properties>
   </object>
  </objectgroup>

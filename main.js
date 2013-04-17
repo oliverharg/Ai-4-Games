@@ -20,9 +20,13 @@ var g_resources= [{
 	type: "image",
 	src: "metatiles32x32.png"
 	}, {
-	name: "route1",
+	name: "route1_from_cave",
 	type: "tmx",
-	src: "route1.tmx"
+	src: "route1_from_cave.tmx"
+	}, {
+	name: "route1_from_town1",
+	type: "tmx",
+	src: "route1_from_town1.tmx"
 	}, {
 	name: "town1_from_route1",
 	type: "tmx",
@@ -51,6 +55,10 @@ var g_resources= [{
 	name: "arena",
 	type: "tmx",
 	src: "arena.tmx"
+	}, {
+	name: "cave",
+	type: "tmx",
+	src: "cave.tmx"
 	}];
 
 
@@ -65,7 +73,7 @@ var jsApp	=
 	{
 		
 		// init the video
-		if (!me.video.init('jsapp', 640, 480, false, 1.0))
+		if (!me.video.init('jsapp', 320, 240, false, 1.0))
 		{
 			alert("Sorry but your browser does not support html 5 canvas.");
          return;
@@ -116,7 +124,7 @@ var PlayScreen = me.ScreenObject.extend(
    onResetEvent: function()
 	{	
       // stuff to reset on state change
-	  me.levelDirector.loadLevel("route1");
+	  me.levelDirector.loadLevel("route1_from_town1");
 	  //alert("TEST");
 	  //pops up a message box, can be dropped in anywhere
 	},
