@@ -12,7 +12,10 @@ var PlayerEntity = me.ObjectEntity.extend({
     init: function(x, y, settings) {
         // call the constructor
         this.parent(x, y, settings);
- 
+		this.addAnimation("left",[4,5]);
+		this.addAnimation("right",[2,3]);
+		this.addAnimation("up",[9,10,11]);
+		this.addAnimation("down",[6,7,8]);
         // set the default horizontal & vertical speed (accel vector)
 		// set to move one unit per button press
         this.setVelocity(3,3);
@@ -36,24 +39,28 @@ var PlayerEntity = me.ObjectEntity.extend({
             // update the entity velocity
             this.vel.x -= this.accel.x * me.timer.tick;
 			this.vel.y = 0;
+			this.setCurrentAnimation("left");
         } else if (me.input.isKeyPressed('right')) {
             // unflip the sprite
             //this.flipX(false);
             // update the entity velocity
             this.vel.x += this.accel.x * me.timer.tick;
 			this.vel.y = 0;
+			this.setCurrentAnimation("right");
         }else if (me.input.isKeyPressed('up')) {
             // unflip the sprite
             //this.flipY(false);
             // update the entity velocity
             this.vel.y -= this.accel.y * me.timer.tick;
 			this.vel.x = 0;
+			this.setCurrentAnimation("up");
         }else if (me.input.isKeyPressed('down')) {
             // unflip the sprite
             //this.flipY(true);
             // update the entity velocity
             this.vel.y += this.accel.y * me.timer.tick;
 			this.vel.x = 0;
+			this.setCurrentAnimation("down");
         } else {
             this.vel.x = 0;
 			this.vel.y = 0;
