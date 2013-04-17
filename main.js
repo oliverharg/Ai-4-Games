@@ -4,9 +4,9 @@ var g_resources= [{
 	type: "image",
 	src: "player.png"
 	}, {
-	name: "player2",
+	name: "enemy1",
 	type: "image",
-	src: "player2.png"
+	src: "enemy1.png"
 	}, {
 	name: "GSCTileset32x32",
 	type: "image",
@@ -104,7 +104,8 @@ var jsApp	=
 		me.state.set(me.state.PLAY, new PlayScreen());
 		
 		me.entityPool.add("player", PlayerEntity);
-		me.debug.renderHitBox = true;
+		me.entityPool.add("Enemy", EnemyEntity);
+		//me.debug.renderHitBox = true;
 		
 		me.input.bindKey(me.input.KEY.LEFT,  "left");
 		me.input.bindKey(me.input.KEY.RIGHT, "right");

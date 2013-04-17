@@ -32,7 +32,7 @@
    <properties>
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
-    <property name="to" value="route1"/>
+    <property name="to" value="route1_from_town1"/>
    </properties>
   </object>
   <object name="me.LevelEntity" x="0" y="32" width="16" height="320">

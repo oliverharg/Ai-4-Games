@@ -43,4 +43,12 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="EnemyEntity" width="20" height="26">
+  <object name="Enemy" x="288" y="416" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy1"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>
