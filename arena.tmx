@@ -36,4 +36,48 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="EnemyEntities" width="20" height="20">
+  <object name="Enemy5" x="96" y="96" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy5"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy6" x="480" y="160" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy1"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy7" x="256" y="224" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy2"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy8" x="416" y="352" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy3"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy9" x="128" y="416" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy5"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy10" x="288" y="64" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy3"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy11" x="544" y="544" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy1"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+ </objectgroup>
 </map>

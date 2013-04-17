@@ -22,7 +22,7 @@
   </data>
  </layer>
  <objectgroup name="mainPlayer" width="20" height="26">
-  <object name="player" x="160" y="351" width="32" height="32">
+  <object name="player" x="158" y="364" width="32" height="32">
    <properties>
     <property name="image" value="player"/>
     <property name="spritewidth" value="28"/>
@@ -40,6 +40,20 @@
     <property name="duration" value="250"/>
     <property name="fade" value="#000000"/>
     <property name="to" value="cave"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="EnemyEntity" width="20" height="26">
+  <object name="Enemy" x="288" y="416" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy1"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
+  <object name="Enemy2" x="512" y="704" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy2"/>
+    <property name="spritewidth" value="28"/>
    </properties>
   </object>
  </objectgroup>

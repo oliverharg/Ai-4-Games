@@ -50,5 +50,11 @@
     <property name="spritewidth" value="28"/>
    </properties>
   </object>
+  <object name="Enemy2" x="512" y="704" width="32" height="32">
+   <properties>
+    <property name="image" value="enemy2"/>
+    <property name="spritewidth" value="28"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

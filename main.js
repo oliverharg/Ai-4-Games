@@ -8,6 +8,22 @@ var g_resources= [{
 	type: "image",
 	src: "enemy1.png"
 	}, {
+	name: "enemy2",
+	type: "image",
+	src: "enemy2.png"
+	},  {
+	name: "enemy3",
+	type: "image",
+	src: "enemy3.png"
+	},  {
+	name: "enemy4",
+	type: "image",
+	src: "enemy4.png"
+	}, {
+	name: "enemy5",
+	type: "image",
+	src: "enemy5.png"
+	}, {
 	name: "GSCTileset32x32",
 	type: "image",
 	src: "GSCTileset32x32.png"
@@ -105,6 +121,18 @@ var jsApp	=
 		
 		me.entityPool.add("player", PlayerEntity);
 		me.entityPool.add("Enemy", EnemyEntity);
+		me.entityPool.add("Enemy2", EnemyEntity);
+		me.entityPool.add("Enemy3", EnemyEntity);
+		me.entityPool.add("Enemy4", EnemyEntity);
+		me.entityPool.add("Enemy5", EnemyEntity);
+		me.entityPool.add("Enemy6", EnemyEntity);
+		me.entityPool.add("Enemy7", EnemyEntity);
+		me.entityPool.add("Enemy8", EnemyEntity);
+		me.entityPool.add("Enemy9", EnemyEntity);
+		me.entityPool.add("Enemy10", EnemyEntity);
+		me.entityPool.add("Enemy11", EnemyEntity);
+		me.entityPool.add("Enemy12", EnemyEntity);
+		me.entityPool.add("Enemy13", EnemyEntity);
 		//me.debug.renderHitBox = true;
 		
 		me.input.bindKey(me.input.KEY.LEFT,  "left");

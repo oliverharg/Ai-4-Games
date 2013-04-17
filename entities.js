@@ -109,12 +109,13 @@ var EnemyEntity = me.ObjectEntity.extend({
         // make it a enemy object
         this.type = me.game.ENEMY_OBJECT;
  
-    },
+    },/*
 	onBattleReturn: function(obj){
 	//return from battle function
 	if(obj.battlewon)
 		this.alive = false;
-	},
+		this.visible = false;
+	},*/
     // call by the engine when colliding with another object
     // obj parameter corresponds to the other object (typically the player) touching this one
     onCollision: function(res, obj) {
@@ -122,9 +123,11 @@ var EnemyEntity = me.ObjectEntity.extend({
         // res.y >0 means touched by something on the bottom
         // which mean at top position for this one
         if (this.alive) {
+			
           //  link to battle sequence                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~CHRIS LOOK HERE!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~
+		  //this.onBattleReturn()
 		  //alert("TEST");
-		  this.visible = false;
+		//  this.visible = false;
         }
     },
  
