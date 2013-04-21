@@ -83,6 +83,10 @@ var g_resources= [{
 	name: "cave",
 	type: "tmx",
 	src: "cave.tmx"
+	}, {
+	name: "song",
+	type: "audio",
+	src: "data/audio/"
 	}];
 
 
@@ -166,6 +170,10 @@ var PlayScreen = me.ScreenObject.extend(
 	{	
       // stuff to reset on state change
 	  me.levelDirector.loadLevel("route1_from_town1");
+	  me.game.addHUD(0,430,640,60);
+	  me.game.HUD.addItem("score", new ScoreObject(620, 10));
+	  me.game.sort();
+	  me.audio.playTrack("song");
 	  //alert("TEST");
 	  //pops up a message box, can be dropped in anywhere
 	},
@@ -178,7 +186,8 @@ var PlayScreen = me.ScreenObject.extend(
 		---	*/
 	onDestroyEvent: function()
 	{
-	
+		me.game.disableHUD();
+		me.audio.stopTrack();
    }
 
 });

@@ -1,6 +1,6 @@
 /*------------------- 
 a player entity
--------------------------------- */
+-------------------*/
 var playerData = {
 	hp: 100,
 	maxHp: 100,
@@ -109,13 +109,16 @@ var EnemyEntity = me.ObjectEntity.extend({
         // make it a enemy object
         this.type = me.game.ENEMY_OBJECT;
  
-    },/*
+    },
 	onBattleReturn: function(obj){
 	//return from battle function
+	
+	//Determine a scoring system for each battle -- scoreFromBattle
+	//me.game.HUD.updateItemValue("score", scoreFromBattle);
 	if(obj.battlewon)
 		this.alive = false;
 		this.visible = false;
-	},*/
+	},
     // call by the engine when colliding with another object
     // obj parameter corresponds to the other object (typically the player) touching this one
     onCollision: function(res, obj) {
@@ -123,11 +126,13 @@ var EnemyEntity = me.ObjectEntity.extend({
         // res.y >0 means touched by something on the bottom
         // which mean at top position for this one
         if (this.alive) {
-			
+			me.game.HUD.updateItemValue("score", 250);
           //  link to battle sequence                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~CHRIS LOOK HERE!!!!!!!!!!!~~~~~~~~~~~~~~~~~~~~~
 		  //this.onBattleReturn()
 		  //alert("TEST");
-		//  this.visible = false;
+		  console.log("TEST");
+		  
+		 this.visible = false;
         }
     },
  
@@ -136,7 +141,7 @@ var EnemyEntity = me.ObjectEntity.extend({
         // do nothing if not visible
         if (!this.inViewport)
             return false;
- /*
+ 
         if (this.alive) {
             if (this.walkLeft && this.pos.x <= this.startX) {
                 this.walkLeft = false;
@@ -150,7 +155,7 @@ var EnemyEntity = me.ObjectEntity.extend({
         } else {
             this.vel.x = 0;
         }
-         */
+         
         // check and update movement
         this.updateMovement();
          
@@ -162,4 +167,22 @@ var EnemyEntity = me.ObjectEntity.extend({
         }
         return false;
     }
+});
+
+/*-------------- 
+a score HUD Item
+--------------------- */
+var ScoreObject = me.HUD_Item.extend({
+		init: function(x,y) {
+			//call the parent constructor
+			this.parent(x,y);
+			//create a font
+			this.font = new me.BitmapFont("32x32_font", 32);
+		},
+		/* -----
+		draw our score
+		-----*/
+		draw: function(context, x, y) {
+			this.font.draw(context, this.value, this.pos.x +x, this.pos.y + y);
+		}
 });
